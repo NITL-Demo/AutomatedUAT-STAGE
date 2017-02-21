@@ -29,7 +29,8 @@ public class Functional_Test {
 	String outputFileLocation="test-output/";
 	@BeforeTest
 	public void init(){
-		webdriver = new FirefoxDriver();
+		 System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");		
+		 webdriver = new FirefoxDriver();
 		try {
 			input  = new FileInputStream("config/config.properties");
 			extentreport= new ExtentReports(outputFileLocation+"ExtentReport/"+"FunctionalTest.html");
