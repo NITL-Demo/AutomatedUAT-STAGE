@@ -33,7 +33,7 @@ public class UAT {
 	public void init(){
 		DesiredCapabilities capabilities = new DesiredCapabilities();
 		capabilities.setCapability("platform", Platform.ANY);
-		capabilities.setCapability("binary", "/usr/bin/firefox");
+		capabilities.setCapability("binary", "/usr/lib/firefox/firefox");
 		webdriver = new FirefoxDriver(capabilities);
 		try {
 			input  = new FileInputStream("config/config.properties");
