@@ -32,7 +32,7 @@ public class Build_Verification_Test {
 	@BeforeTest
 	public void init(){
 		System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");		
-		   driver = new FirefoxDriver();
+		   webdriver = new FirefoxDriver();
 		try {
 			input  = new FileInputStream("config/config.properties");
 			extentreport= new ExtentReports(outputFileLocation+"ExtentReport/"+"BuildVerification.html");
