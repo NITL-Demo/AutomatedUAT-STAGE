@@ -9,10 +9,12 @@ import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -29,7 +31,10 @@ public class UAT {
 	String outputFileLocation="test-output/";
 	@BeforeTest
 	public void init(){
-		webdriver = new FirefoxDriver();
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+		capabilities.setCapability("platform", Platform.ANY);
+		capabilities.setCapability("binary", "/usr/bin/firefox");
+		webdriver = new FirefoxDriver(capabilities);
 		try {
 			input  = new FileInputStream("config/config.properties");
 			extentreport= new ExtentReports(outputFileLocation+"ExtentReport/"+"UAT.html");
