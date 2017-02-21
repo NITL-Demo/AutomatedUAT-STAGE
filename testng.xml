@@ -4,8 +4,9 @@
   <test name="Test">
   <classes>
 <class name="com.Build_Verification_Test"/>
-<!--
+
 <class name="com.Functional_Test"/>
+    <!--
 <class name="com.UAT"/>
 -->
 </classes>
