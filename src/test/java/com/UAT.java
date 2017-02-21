@@ -31,10 +31,13 @@ public class UAT {
 	String outputFileLocation="test-output/";
 	@BeforeTest
 	public void init(){
-		DesiredCapabilities capabilities = new DesiredCapabilities();
-		capabilities.setCapability("platform", Platform.ANY);
-		capabilities.setCapability("binary", "/usr/lib/firefox/firefox");
-		webdriver = new FirefoxDriver(capabilities);
+		//DesiredCapabilities capabilities = new DesiredCapabilities();
+		//capabilities.setCapability("platform", Platform.ANY);
+		//capabilities.setCapability("binary", "/usr/lib/firefox/firefox");
+		//webdriver = new FirefoxDriver(capabilities);
+		 System.setProperty("webdriver.gecko.driver","/root/artifacts/resources/geckodriver");		
+		 webdriver = new FirefoxDriver();
+		
 		try {
 			input  = new FileInputStream("config/config.properties");
 			extentreport= new ExtentReports(outputFileLocation+"ExtentReport/"+"UAT.html");
